@@ -12,6 +12,10 @@ $teachers = $this->vars->teachers;
             Список учителей
         </h1>
 
+        <p>
+        	<a href="/teacher/add/" class="btn btn-success"><i class="fa fa-plus"></i> Добавить</a>
+        </p>
+
         <table class="table table-bordered table-hover table-striped">
         	<thead>
         		<th>#</th>
@@ -25,7 +29,7 @@ $teachers = $this->vars->teachers;
         			<td><?= $teacher->id ?></td>
         			<td><?= $teacher->full_name ?></td>
         			<td><?= $teacher->subject_title ?></td>
-        			<td><a href="/teacher/<?= $teacher->id ?>/">Редактировать</a></td>
+        			<td><a href="/teacher/<?= $teacher->id ?>/update/"><i class="fa fa-edit"></i> редактировать</a></td>
         		</tr>
         		<?php endforeach; ?>
         	</tbody>

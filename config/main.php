@@ -3,9 +3,11 @@
 return array(
 	'routes' => array(
 		'/' => 'main',
-		'/teacher/' => 'user/teacher',
 		'/auth/' => 'user/auth',
-		'/user/\d+/' => 'user/update',
+
+		'/teacher/' => 'user/teacher',
+		'/teacher/add/' => 'user/teacher_update',
+		'/teacher/\d+/update/' => 'user/teacher_update',
 	),
 
 	'db' => array(
