@@ -48,6 +48,8 @@ class App extends Singleton {
 		$_COOKIE['access_token'] = $accessToken;
 
 		$this->currentUser = $user;
+
+		return true;
 	}
 
 	public function redirect($url = '/') {

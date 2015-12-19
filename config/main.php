@@ -2,7 +2,7 @@
 
 return array(
 	'routes' => array(
-		'//' => 'index',
+		'/' => 'main',
 		'/user/' => 'user',
 		'/auth/' => 'user/auth',
 		'/user/\d+/' => 'user/update',
