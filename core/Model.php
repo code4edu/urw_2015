@@ -16,7 +16,7 @@ abstract class Model extends Singleton {
 			SELECT *
 			FROM ' . $this->table . '
 			WHERE id = ' . (int) $id . '
-		')->result();
+		')->row();
 	}
 
 	public function get_list($ids = array()) {

@@ -45,7 +45,7 @@ class App extends Singleton {
 		$accessToken = $this->User->setAccessToken($user->id);
 
 		$_SESSION['access_token'] = $accessToken;
-		$_COOKIE['access_token'] = $accessToken;
+		setcookie('access_token', $accessToken);
 
 		$this->currentUser = $user;
 
@@ -60,6 +60,11 @@ class App extends Singleton {
 		return $this->currentUser;
 	}
 
+	public function checkAuth() {
+		if ($this->currentUser === null) {
+			return $this->redirect('/auth/');
+		}
+	}
 
 	public function render($template, $vars = array()) {
 		$this->vars = (object) array_merge((array) $this->vars, $vars);

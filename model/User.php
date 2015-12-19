@@ -5,7 +5,24 @@ namespace model;
 use core\Model;
 
 class User extends Model {
+	const ADMIN = 1;
+	const TEACHER = 2;
+	const PUPIL = 3;
+
 	protected $table = 'user';
+
+	public function get($id) {
+		return $this->app->db->query('
+			SELECT
+				user.*,
+				school.title school
+			FROM ' . $this->table . '
+			INNER JOIN
+				school ON school.id = user.school_id
+			WHERE
+				user.id = ' . (int) $id . '
+		')->row();
+	}
 
 	public function getByAccessToken($accessToken) {
 		if ($accessToken === null) return null;
@@ -13,7 +30,7 @@ class User extends Model {
 		return $this->app->db->query('
 			SELECT *
 			FROM ' . $this->table . '
-			WHERE access_token = ' . $accessToken . '
+			WHERE access_token = \'' . $accessToken . '\'
 		')->row();
 	}
 

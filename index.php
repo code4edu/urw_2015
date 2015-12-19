@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 require("core/autoloader.php");
 
 $config = new \core\Config(require("config/main.php"));

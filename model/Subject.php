@@ -4,8 +4,8 @@ namespace model;
 
 use core\Model;
 
-class User extends Model {
-	protected $table = 'user';
+class Subject extends Model {
+	protected $table = 'subject';
 
 	public function getByAccessToken($accessToken) {
 		if ($accessToken === null) return null;

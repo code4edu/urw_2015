@@ -3,7 +3,7 @@
 return array(
 	'routes' => array(
 		'/' => 'main',
-		'/user/' => 'user',
+		'/teacher/' => 'user/teacher',
 		'/auth/' => 'user/auth',
 		'/user/\d+/' => 'user/update',
 	),

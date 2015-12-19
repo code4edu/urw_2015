@@ -5,14 +5,12 @@ use core\helper\Input;
 
 $app = App::getInstance();
 
-if ($app->getCurrentUser() !== null) {
-	$app->redirect('/');
-}
+$app->checkAuth();
 
-if (Input::isPost()) {
+$currentUser = $app->getCurrentUser();
 
-}
+$user = $app->User->get($currentUser->id);
 
-$app->renderPage('auth', array(
-	
+$app->renderPage('main', array(
+	'user' => $user,
 ));
