@@ -14,12 +14,12 @@ class Router {
 		$this->controller = $this->findController();
 
 		$path = 'controller/' . $this->controller . '.php';
-
+		
 		if (file_exists($path)) {
 			require($path);
 		}
 		else {
-			// $this->pageNotFound();
+			$this->pageNotFound();
 		}
 	}
 

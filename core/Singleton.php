@@ -8,11 +8,11 @@ abstract class Singleton {
 	final public static function getInstance() {
 		$class = get_called_class();
 
-		if (!isset($instances[$class])) {
-			$instances[$class] = new $class();
+		if (!isset(self::$instances[$class])) {
+			self::$instances[$class] = new $class();
 		}
 
-		return $instances[$class];
+		return self::$instances[$class];
 	}
 
 	protected function __construct() { }
