@@ -14,6 +14,13 @@ class App extends Singleton {
 	}
 
 	public function start() {
+		$dbConfig = $this->config->db;
+
+		$this->db = new lib\db($dbConfig['host'], $dbConfig['user'], $dbConfig['password'], $dbConfig['database'], true);
 		$this->router->start();
+	}
+
+	private function getDb() {
+		return $this->db;
 	}
 }
