@@ -8,5 +8,3 @@ $app = \core\App::getInstance();
 
 $app->init($config);
 $app->start();
-
-
