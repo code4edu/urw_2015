@@ -24,6 +24,21 @@ class User extends Model {
 		')->row();
 	}
 
+	public function getTeachers($school_id) {
+		return $this->app->db->query('
+			SELECT
+				user.*,
+				CONCAT(user.surname, \' \', user.name, \' \', user.patronymic) full_name,
+				subject.title subject_title
+			FROM ' . $this->table . '
+			INNER JOIN
+				subject ON subject.id = user.subject_id
+			WHERE
+				school_id = ' . (int) $school_id . ' AND
+				group_id = ' . self::TEACHER . '
+		')->result();
+	}
+
 	public function getByAccessToken($accessToken) {
 		if ($accessToken === null) return null;
 

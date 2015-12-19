@@ -15,13 +15,17 @@ $teachers = $this->vars->teachers;
         <table class="table table-bordered table-hover table-striped">
         	<thead>
         		<th>#</th>
-        		<th>asd</th>
+        		<th>ФИО</th>
+        		<th>Предмет</th>
+        		<th></th>
         	</thead>
         	<tbody>
         		<?php foreach($teachers as $teacher): ?>
         		<tr>
-        			<td>asd</td>
-        			<td>asd</td>
+        			<td><?= $teacher->id ?></td>
+        			<td><?= $teacher->full_name ?></td>
+        			<td><?= $teacher->subject_title ?></td>
+        			<td><a href="/teacher/<?= $teacher->id ?>/">Редактировать</a></td>
         		</tr>
         		<?php endforeach; ?>
         	</tbody>

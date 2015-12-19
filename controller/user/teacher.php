@@ -10,7 +10,9 @@ $app->checkAuth();
 $currentUser = $app->getCurrentUser();
 
 $user = $app->User->get($currentUser->id);
+$teachers = $app->User->getTeachers($currentUser->school_id);
 
 $app->renderPage('teacher', array(
 	'user' => $user,
+	'teachers' => $teachers,
 ));
