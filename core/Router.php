@@ -19,7 +19,7 @@ class Router {
 			require($path);
 		}
 		else {
-			$this->pageNotFound();
+			// $this->pageNotFound();
 		}
 	}
 
