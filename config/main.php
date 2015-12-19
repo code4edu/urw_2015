@@ -9,9 +9,9 @@ return array(
 	),
 
 	'db' => array(
-		'host' => 'sql4.freemysqlhosting.net',
-		'user' => 'sql4100371',
-		'password' => 'eeAiUuEwAv',
-		'database' => 'sql4100371',
+		'host' => 'http://db4free.net/',
+		'user' => 'urw_dev',
+		'password' => 'urw_dev',
+		'database' => 'urw_dev',
 	)
 );
